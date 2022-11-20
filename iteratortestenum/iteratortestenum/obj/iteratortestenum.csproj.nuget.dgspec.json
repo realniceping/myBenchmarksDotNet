@@ -1,0 +1,119 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\dotnetprojects\\myBenchmarks\\iteratortestenum\\iteratortestenum\\iteratortestenum.csproj": {}
+  },
+  "projects": {
+    "D:\\dotnetprojects\\myBenchmarks\\iteratortestenum\\iteratortestenum\\iteratortestenum.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\dotnetprojects\\myBenchmarks\\iteratortestenum\\iteratortestenum\\iteratortestenum.csproj",
+        "projectName": "iteratortestenum",
+        "projectPath": "D:\\dotnetprojects\\myBenchmarks\\iteratortestenum\\iteratortestenum\\iteratortestenum.csproj",
+        "packagesPath": "C:\\Users\\arsen\\.nuget\\packages\\",
+        "outputPath": "D:\\dotnetprojects\\myBenchmarks\\iteratortestenum\\iteratortestenum\\obj\\",
+        "projectStyle": "PackageReference",
+        "crossTargeting": true,
+        "configFilePaths": [
+          "C:\\Users\\arsen\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0",
+          "net7.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          },
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "BenchmarkDotNet": {
+              "target": "Package",
+              "version": "[0.13.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.11, 6.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.11, 6.0.11]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.11, 6.0.11]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.11, 6.0.11]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        },
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "dependencies": {
+            "BenchmarkDotNet": {
+              "target": "Package",
+              "version": "[0.13.2, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

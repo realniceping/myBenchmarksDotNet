@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+<meta charset='utf-8' />
+<title>Benchy-20221120-132837</title>
+
+<style type="text/css">
+	table { border-collapse: collapse; display: block; width: 100%; overflow: auto; }
+	td, th { padding: 6px 13px; border: 1px solid #ddd; text-align: right; }
+	tr { background-color: #fff; border-top: 1px solid #ccc; }
+	tr:nth-child(even) { background: #f8f8f8; }
+</style>
+</head>
+<body>
+<pre><code>
+BenchmarkDotNet=v0.13.2, OS=Windows 10 (10.0.19044.2251/21H2/November2021Update)
+AMD Ryzen 5 5600X, 1 CPU, 12 logical and 6 physical cores
+.NET SDK=7.0.100
+  [Host]   : .NET 6.0.10 (6.0.1022.47605), X64 RyuJIT AVX2
+  .NET 6.0 : .NET 6.0.10 (6.0.1022.47605), X64 RyuJIT AVX2
+  .NET 7.0 : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+</code></pre>
+<pre><code></code></pre>
+
+<table>
+<thead><tr><th>                                            Method</th><th>Job</th><th>Runtime</th><th>      Mean</th><th>    Error</th><th>   StdDev</th><th>    Median</th><th>Gen0</th><th>Gen1</th><th>Gen2</th><th>Allocated</th>
+</tr>
+</thead><tbody><tr><td>CreateQubeNumberSequenceAsIterTest</td><td>.NET 6.0</td><td>.NET 6.0</td><td>3.251 ns</td><td>0.0867 ns</td><td>0.1585 ns</td><td>3.230 ns</td><td>0.0019</td><td>-</td><td>-</td><td>32 B</td>
+</tr><tr><td>CreateQubeNumberSequenceAsList</td><td>.NET 6.0</td><td>.NET 6.0</td><td>183.601 ns</td><td>3.6917 ns</td><td>5.6376 ns</td><td>181.106 ns</td><td>0.0706</td><td>-</td><td>-</td><td>1184 B</td>
+</tr><tr><td>CreateQubeNumberSequenceAsListByIEnumerableToListMillion</td><td>.NET 6.0</td><td>.NET 6.0</td><td>6,382,499.756 ns</td><td>107,910.0450 ns</td><td>105,982.0931 ns</td><td>6,400,873.047 ns</td><td>1992.1875</td><td>1992.1875</td><td>1992.1875</td><td>8389762 B</td>
+</tr><tr><td>CreateAndIterBySequenceIterator</td><td>.NET 6.0</td><td>.NET 6.0</td><td>323.174 ns</td><td>4.4566 ns</td><td>3.9507 ns</td><td>322.785 ns</td><td>0.0019</td><td>-</td><td>-</td><td>32 B</td>
+</tr><tr><td>CreateAndIterBySequenceIteratorMiillion</td><td>.NET 6.0</td><td>.NET 6.0</td><td>3,022,569.987 ns</td><td>2,558.0187 ns</td><td>1,997.1327 ns</td><td>3,022,841.602 ns</td><td>-</td><td>-</td><td>-</td><td>34 B</td>
+</tr><tr><td>CreateAndIterBySequenceList</td><td>.NET 6.0</td><td>.NET 6.0</td><td>228.300 ns</td><td>4.3648 ns</td><td>4.6703 ns</td><td>228.109 ns</td><td>0.0706</td><td>-</td><td>-</td><td>1184 B</td>
+</tr><tr><td>CreateAndIterBySequenceListMillion</td><td>.NET 6.0</td><td>.NET 6.0</td><td>4,037,198.507 ns</td><td>79,355.0867 ns</td><td>150,981.2998 ns</td><td>4,038,118.750 ns</td><td>1992.1875</td><td>1992.1875</td><td>1992.1875</td><td>8389706 B</td>
+</tr><tr><td>CreateAndIterBySequenceListAsSpan</td><td>.NET 6.0</td><td>.NET 6.0</td><td>202.234 ns</td><td>4.0181 ns</td><td>7.3474 ns</td><td>200.886 ns</td><td>0.0706</td><td>-</td><td>-</td><td>1184 B</td>
+</tr><tr><td>CreateQubeNumberSequenceAsIterTest</td><td>.NET 7.0</td><td>.NET 7.0</td><td>4.168 ns</td><td>0.0879 ns</td><td>0.0822 ns</td><td>4.166 ns</td><td>0.0019</td><td>-</td><td>-</td><td>32 B</td>
+</tr><tr><td>CreateQubeNumberSequenceAsList</td><td>.NET 7.0</td><td>.NET 7.0</td><td>186.854 ns</td><td>3.7383 ns</td><td>10.2962 ns</td><td>180.716 ns</td><td>0.0706</td><td>-</td><td>-</td><td>1184 B</td>
+</tr><tr><td>CreateQubeNumberSequenceAsListByIEnumerableToListMillion</td><td>.NET 7.0</td><td>.NET 7.0</td><td>5,891,181.070 ns</td><td>57,204.2236 ns</td><td>47,768.1175 ns</td><td>5,905,981.250 ns</td><td>1992.1875</td><td>1992.1875</td><td>1992.1875</td><td>8389761 B</td>
+</tr><tr><td>CreateAndIterBySequenceIterator</td><td>.NET 7.0</td><td>.NET 7.0</td><td>356.409 ns</td><td>7.0515 ns</td><td>8.3943 ns</td><td>358.421 ns</td><td>0.0019</td><td>-</td><td>-</td><td>32 B</td>
+</tr><tr><td>CreateAndIterBySequenceIteratorMiillion</td><td>.NET 7.0</td><td>.NET 7.0</td><td>3,021,701.683 ns</td><td>6,184.3320 ns</td><td>5,164.1973 ns</td><td>3,020,479.688 ns</td><td>-</td><td>-</td><td>-</td><td>34 B</td>
+</tr><tr><td>CreateAndIterBySequenceList</td><td>.NET 7.0</td><td>.NET 7.0</td><td>214.980 ns</td><td>2.1850 ns</td><td>1.7059 ns</td><td>215.390 ns</td><td>0.0706</td><td>-</td><td>-</td><td>1184 B</td>
+</tr><tr><td>CreateAndIterBySequenceListMillion</td><td>.NET 7.0</td><td>.NET 7.0</td><td>3,825,654.147 ns</td><td>11,881.9725 ns</td><td>9,921.9852 ns</td><td>3,825,230.469 ns</td><td>1992.1875</td><td>1992.1875</td><td>1992.1875</td><td>8389704 B</td>
+</tr><tr><td>CreateAndIterBySequenceListAsSpan</td><td>.NET 7.0</td><td>.NET 7.0</td><td>199.856 ns</td><td>2.4027 ns</td><td>2.1299 ns</td><td>199.434 ns</td><td>0.0706</td><td>-</td><td>-</td><td>1184 B</td>
+</tr></tbody></table>
+</body>
+</html>

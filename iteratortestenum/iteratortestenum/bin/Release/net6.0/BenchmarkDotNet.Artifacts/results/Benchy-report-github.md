@@ -1,0 +1,29 @@
+``` ini
+
+BenchmarkDotNet=v0.13.2, OS=Windows 10 (10.0.19044.2251/21H2/November2021Update)
+AMD Ryzen 5 5600X, 1 CPU, 12 logical and 6 physical cores
+.NET SDK=7.0.100
+  [Host]   : .NET 6.0.10 (6.0.1022.47605), X64 RyuJIT AVX2
+  .NET 6.0 : .NET 6.0.10 (6.0.1022.47605), X64 RyuJIT AVX2
+  .NET 7.0 : .NET 7.0.0 (7.0.22.51805), X64 RyuJIT AVX2
+
+
+```
+|                                                   Method |      Job |  Runtime |             Mean |           Error |          StdDev |           Median |      Gen0 |      Gen1 |      Gen2 | Allocated |
+|--------------------------------------------------------- |--------- |--------- |-----------------:|----------------:|----------------:|-----------------:|----------:|----------:|----------:|----------:|
+|                       CreateQubeNumberSequenceAsIterTest | .NET 6.0 | .NET 6.0 |         3.251 ns |       0.0867 ns |       0.1585 ns |         3.230 ns |    0.0019 |         - |         - |      32 B |
+|                           CreateQubeNumberSequenceAsList | .NET 6.0 | .NET 6.0 |       183.601 ns |       3.6917 ns |       5.6376 ns |       181.106 ns |    0.0706 |         - |         - |    1184 B |
+| CreateQubeNumberSequenceAsListByIEnumerableToListMillion | .NET 6.0 | .NET 6.0 | 6,382,499.756 ns | 107,910.0450 ns | 105,982.0931 ns | 6,400,873.047 ns | 1992.1875 | 1992.1875 | 1992.1875 | 8389762 B |
+|                          CreateAndIterBySequenceIterator | .NET 6.0 | .NET 6.0 |       323.174 ns |       4.4566 ns |       3.9507 ns |       322.785 ns |    0.0019 |         - |         - |      32 B |
+|                  CreateAndIterBySequenceIteratorMiillion | .NET 6.0 | .NET 6.0 | 3,022,569.987 ns |   2,558.0187 ns |   1,997.1327 ns | 3,022,841.602 ns |         - |         - |         - |      34 B |
+|                              CreateAndIterBySequenceList | .NET 6.0 | .NET 6.0 |       228.300 ns |       4.3648 ns |       4.6703 ns |       228.109 ns |    0.0706 |         - |         - |    1184 B |
+|                       CreateAndIterBySequenceListMillion | .NET 6.0 | .NET 6.0 | 4,037,198.507 ns |  79,355.0867 ns | 150,981.2998 ns | 4,038,118.750 ns | 1992.1875 | 1992.1875 | 1992.1875 | 8389706 B |
+|                        CreateAndIterBySequenceListAsSpan | .NET 6.0 | .NET 6.0 |       202.234 ns |       4.0181 ns |       7.3474 ns |       200.886 ns |    0.0706 |         - |         - |    1184 B |
+|                       CreateQubeNumberSequenceAsIterTest | .NET 7.0 | .NET 7.0 |         4.168 ns |       0.0879 ns |       0.0822 ns |         4.166 ns |    0.0019 |         - |         - |      32 B |
+|                           CreateQubeNumberSequenceAsList | .NET 7.0 | .NET 7.0 |       186.854 ns |       3.7383 ns |      10.2962 ns |       180.716 ns |    0.0706 |         - |         - |    1184 B |
+| CreateQubeNumberSequenceAsListByIEnumerableToListMillion | .NET 7.0 | .NET 7.0 | 5,891,181.070 ns |  57,204.2236 ns |  47,768.1175 ns | 5,905,981.250 ns | 1992.1875 | 1992.1875 | 1992.1875 | 8389761 B |
+|                          CreateAndIterBySequenceIterator | .NET 7.0 | .NET 7.0 |       356.409 ns |       7.0515 ns |       8.3943 ns |       358.421 ns |    0.0019 |         - |         - |      32 B |
+|                  CreateAndIterBySequenceIteratorMiillion | .NET 7.0 | .NET 7.0 | 3,021,701.683 ns |   6,184.3320 ns |   5,164.1973 ns | 3,020,479.688 ns |         - |         - |         - |      34 B |
+|                              CreateAndIterBySequenceList | .NET 7.0 | .NET 7.0 |       214.980 ns |       2.1850 ns |       1.7059 ns |       215.390 ns |    0.0706 |         - |         - |    1184 B |
+|                       CreateAndIterBySequenceListMillion | .NET 7.0 | .NET 7.0 | 3,825,654.147 ns |  11,881.9725 ns |   9,921.9852 ns | 3,825,230.469 ns | 1992.1875 | 1992.1875 | 1992.1875 | 8389704 B |
+|                        CreateAndIterBySequenceListAsSpan | .NET 7.0 | .NET 7.0 |       199.856 ns |       2.4027 ns |       2.1299 ns |       199.434 ns |    0.0706 |         - |         - |    1184 B |
